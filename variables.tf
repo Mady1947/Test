@@ -1,14 +1,8 @@
-variable "accessKey" {
-  type        = string
-  default     = ""
-}
-variable "secretKey" {
-  type        = string
-  default     = ""
-}
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+variable "instance_type" {}
 variable "region" {
-  type        = string
-  default     = ""
+   default = "ap-south-1"
 }
 variable "vm_names" {
   type        = list(string)
