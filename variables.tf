@@ -12,9 +12,11 @@ variable "region" {
 }
 variable "ami" {
   type        = string
+  ami ="ami-03dbf9550d4620230"
 }
 variable "instancetype" {
   type        = string
+  instancetype ="t2.micro"
 }
 variable "vm_names" {
   type        = list(string)
