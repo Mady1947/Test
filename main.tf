@@ -5,8 +5,8 @@ provider "aws" {
 }
 resource "aws_instance" "Test" {
   count = length(var.vm_names)
-  ami           = "${var.ami}"
-  instance_type = "${var.instancetype}"
+  ami           = var.ami
+  instance_type = var.instancetype
   tags = {
       Name = var.vm_names[count.index]
     createdby = "Madhav"
