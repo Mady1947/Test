@@ -4,11 +4,11 @@ provider "aws" {
   secret_key = var.secretkey
 }
 resource "aws_instance" "Test" {
-  count = length(var.vm_names)
+  for_each = toset(var_names)
   ami           = var.ami
   instance_type = var.instancetype
   tags = {
-      Name = var.vm_names[count.index]
+      Name = each.value
     createdby = "Madhav"
     }
 }
